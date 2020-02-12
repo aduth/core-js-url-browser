@@ -1,0 +1,37 @@
+{
+  "name": "core-js-url-browser",
+  "version": "3.6.4",
+  "description": "`core-js`'s `web/url.js` prebundled for the browser",
+  "main": "url.js",
+  "files": [
+    "url.js",
+    "url.min.js"
+  ],
+  "scripts": {
+    "bundle": "browserify node_modules/core-js/web/url.js > url.js",
+    "minify": "terser -c -m -o url.min.js -- url.js",
+    "build": "npm run bundle && npm run minify",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "core-js",
+    "url",
+    "whatwg-url",
+    "polyfill"
+  ],
+  "author": {
+    "name": "Andrew Duthie",
+    "email": "andrew@andrewduthie.com",
+    "url": "https://andrewduthie.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aduth/core-js-url-browser.git"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "browserify": "^16.5.0",
+    "core-js": "^3.6.4",
+    "terser": "^4.6.3"
+  }
+}
